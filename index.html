@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Joffrey Yap | Automation & IT Support</title>
 
-  <!-- Font Awesome for icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
@@ -15,76 +15,179 @@
       box-sizing: border-box;
       font-family: Arial, sans-serif;
     }
+
     body {
       background: #0f172a;
       color: #e2e8f0;
       text-align: center;
       padding: 50px;
     }
+
     header {
-      padding: 50px 20px;
+      padding: 60px 20px;
     }
+
     header h1 {
       font-size: 48px;
       margin-bottom: 5px;
     }
+
     header p {
       color: #94a3b8;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
+
     .button {
       display: inline-block;
-      margin-top: 10px;
       padding: 12px 25px;
       background: #38bdf8;
       color: #0f172a;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      transition: 0.3s;
     }
+
     .button:hover {
       background: #0ea5e9;
+      transform: translateY(-2px);
     }
+
+    .button-green {
+      background: #22c55e;
+      margin-left: 10px;
+    }
+
     section {
-      margin-top: 40px;
+      margin-top: 50px;
     }
+
     .card {
       background: #1e293b;
-      padding: 25px;
-      margin: 15px auto;
+      padding: 30px;
+      margin: 20px auto;
       width: 80%;
-      border-radius: 12px;
+      border-radius: 16px;
       transition: 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
+
     .card:hover {
       background: #24344d;
-      transform: translateY(-3px);
+      transform: translateY(-5px);
     }
+
     h2 {
       color: #38bdf8;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
+
     p, ul {
       text-align: left;
-      margin-left: 15px;
+      margin-left: 10px;
     }
+
     ul li {
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
+
     footer {
-      margin-top: 40px;
+      margin-top: 60px;
       font-size: 14px;
       color: #64748b;
     }
+
     .icon-link {
       color: #38bdf8;
       text-decoration: none;
       font-size: 18px;
       margin-left: 5px;
     }
+
     .icon-link:hover {
       color: #0ea5e9;
     }
+
+    /* CHAT STYLING */
+
+    #chatbox {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 320px;
+      height: 420px;
+      border-radius: 16px;
+      padding: 15px;
+      background: #0f172a;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      border: 1px solid #38bdf8;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 9999;
+    }
+
+    #messages {
+      flex: 1;
+      overflow-y: auto;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .input-area {
+      display: flex;
+    }
+
+    #userMessage {
+      flex: 1;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #38bdf8;
+      background: #1e293b;
+      color: #e2e8f0;
+    }
+
+    #sendBtn {
+      padding: 8px 12px;
+      margin-left: 5px;
+      border-radius: 8px;
+      border: none;
+      background: #38bdf8;
+      color: #0f172a;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #sendBtn:hover {
+      background: #0ea5e9;
+    }
+
+    .user-msg {
+      text-align: right;
+      margin-bottom: 8px;
+    }
+
+    .user-msg span {
+      background: #38bdf8;
+      color: #0f172a;
+      padding: 6px 10px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .bot-msg {
+      text-align: left;
+      margin-bottom: 8px;
+    }
+
+    .bot-msg span {
+      background: #1e293b;
+      border: 1px solid #38bdf8;
+      padding: 6px 10px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
   </style>
 </head>
 
@@ -92,24 +195,33 @@
 
   <header>
     <h1>Joffrey Yap</h1>
-    <p>IT Support | Automation Specialist | Docker & n8n Deployment</p>
+    <p>Automation Consultant | Workflow Engineer | Docker & n8n Specialist</p>
+
     <a href="#contact" class="button">Contact Me</a>
+    <a href="mailto:yapjoffrey@gmail.com" class="button button-green">
+      Hire Me for Automation Projects
+    </a>
   </header>
 
   <section>
+
     <div class="card">
       <h2>About Me</h2>
-      <p>I help businesses automate workflows and optimize IT systems using Docker, n8n, Windows scripting, and secure device deployment. I focus on clean, scalable, and production‑ready solutions.</p>
+      <p>
+        I help businesses automate workflows and optimize IT systems using Docker,
+        n8n, Windows scripting, and secure server deployment.
+        I build clean, scalable, production-ready solutions.
+      </p>
     </div>
 
     <div class="card">
       <h2>Core Skills</h2>
       <ul>
-        <li>✔ Docker Deployment (Production Setup)</li>
+        <li>✔ Docker Production Deployment</li>
         <li>✔ n8n Workflow Automation</li>
         <li>✔ Ubuntu Server Configuration</li>
         <li>✔ Windows PowerShell Scripting</li>
-        <li>✔ Device Security & Provisioning</li>
+        <li>✔ Secure Device Provisioning</li>
       </ul>
     </div>
 
@@ -147,44 +259,25 @@
       </p>
 
     </div>
+
   </section>
 
   <footer>© 2026 Joffrey Yap | Built with GitHub Pages</footer>
 
-  <!-- Chat Widget -->
-  <div id="chatbox" style="
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 300px;
-      height: 350px;
-      border: 1px solid #38bdf8;
-      border-radius: 12px;
-      padding: 10px;
-      background: #1e293b;
-      color: #e2e8f0;
-      overflow-y: auto;
-      z-index: 9999;
-      font-family: Arial, sans-serif;
-  ">
-    <div id="messages" style="height: 280px; overflow-y: auto;"></div>
-    <input id="userMessage" type="text" placeholder="Type your message..." style="
-        width: 200px;
-        padding: 5px;
-        border-radius: 6px;
-        border: 1px solid #38bdf8;
-        background: #0f172a;
-        color: #e2e8f0;
-    ">
-    <button onclick="sendMessage()" style="
-        padding: 5px 10px;
-        margin-left: 5px;
-        border-radius: 6px;
-        border: none;
-        background: #38bdf8;
-        color: #0f172a;
-        font-weight: bold;
-    ">Send</button>
+  <!-- CHATBOX -->
+  <div id="chatbox">
+
+    <div id="messages"></div>
+
+    <div class="input-area">
+      <input id="userMessage"
+        type="text"
+        placeholder="Ask me about automation..."
+        onkeypress="if(event.key==='Enter'){sendMessage()}">
+
+      <button id="sendBtn" onclick="sendMessage()">Send</button>
+    </div>
+
   </div>
 
   <script>
@@ -194,9 +287,21 @@
       if (!message) return;
 
       const messagesDiv = document.getElementById("messages");
-      messagesDiv.innerHTML += `<p><b>You:</b> ${message}</p>`;
+
+      // User message
+      messagesDiv.innerHTML += `
+        <div class="user-msg">
+          <span>${message}</span>
+        </div>`;
 
       input.value = "";
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+      // Typing indicator
+      messagesDiv.innerHTML += `
+        <div class="bot-msg" id="typing">
+          <span>Typing...</span>
+        </div>`;
       messagesDiv.scrollTop = messagesDiv.scrollHeight;
 
       try {
@@ -207,10 +312,24 @@
         });
 
         const data = await response.json();
-        messagesDiv.innerHTML += `<p><b>Bot:</b> ${data.reply}</p>`;
+
+        document.getElementById("typing").remove();
+
+        messagesDiv.innerHTML += `
+          <div class="bot-msg">
+            <span>${data.reply}</span>
+          </div>`;
+
         messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
       } catch (err) {
-        messagesDiv.innerHTML += `<p style="color:red;"><b>Error:</b> Could not reach bot.</p>`;
+        document.getElementById("typing").remove();
+
+        messagesDiv.innerHTML += `
+          <div class="bot-msg">
+            <span style="color:red;">Error: Could not reach bot.</span>
+          </div>`;
+
         messagesDiv.scrollTop = messagesDiv.scrollHeight;
         console.error(err);
       }
