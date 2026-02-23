@@ -9,209 +9,50 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      background: #0f172a;
-      color: #e2e8f0;
-      text-align: center;
-      padding: 50px;
-    }
-
-    header {
-      padding: 60px 20px;
-    }
-
-    header h1 {
-      font-size: 48px;
-      margin-bottom: 5px;
-    }
-
-    header p {
-      color: #94a3b8;
-      margin-bottom: 20px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 12px 25px;
-      background: #38bdf8;
-      color: #0f172a;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .button:hover {
-      background: #0ea5e9;
-      transform: translateY(-2px);
-    }
-
-    .button-green {
-      background: #22c55e;
-      margin-left: 10px;
-    }
-
-    section {
-      margin-top: 50px;
-    }
-
-    .card {
-      background: #1e293b;
-      padding: 30px;
-      margin: 20px auto;
-      width: 80%;
-      border-radius: 16px;
-      transition: 0.3s ease;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
-
-    .card:hover {
-      background: #24344d;
-      transform: translateY(-5px);
-    }
-
-    h2 {
-      color: #38bdf8;
-      margin-bottom: 15px;
-    }
-
-    p, ul {
-      text-align: left;
-      margin-left: 10px;
-    }
-
-    ul li {
-      margin-bottom: 8px;
-    }
-
-    footer {
-      margin-top: 60px;
-      font-size: 14px;
-      color: #64748b;
-    }
-
-    .icon-link {
-      color: #38bdf8;
-      text-decoration: none;
-      font-size: 18px;
-      margin-left: 5px;
-    }
-
-    .icon-link:hover {
-      color: #0ea5e9;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background: #0f172a; color: #e2e8f0; text-align: center; padding: 50px; }
+    header { padding: 60px 20px; }
+    header h1 { font-size: 48px; margin-bottom: 5px; }
+    header p { color: #94a3b8; margin-bottom: 20px; }
+    .button { display: inline-block; padding: 12px 25px; background: #38bdf8; color: #0f172a; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+    .button:hover { background: #0ea5e9; transform: translateY(-2px); }
+    .button-green { background: #22c55e; margin-left: 10px; }
+    section { margin-top: 50px; }
+    .card { background: #1e293b; padding: 30px; margin: 20px auto; width: 80%; border-radius: 16px; transition: 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+    .card:hover { background: #24344d; transform: translateY(-5px); }
+    h2 { color: #38bdf8; margin-bottom: 15px; }
+    p, ul { text-align: left; margin-left: 10px; }
+    ul li { margin-bottom: 8px; }
+    footer { margin-top: 60px; font-size: 14px; color: #64748b; }
+    .icon-link { color: #38bdf8; text-decoration: none; font-size: 18px; margin-left: 5px; }
+    .icon-link:hover { color: #0ea5e9; }
 
     /* CHAT STYLING */
-
-    #chatbox {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 320px;
-      height: 420px;
-      border-radius: 16px;
-      padding: 15px;
-      background: #0f172a;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-      border: 1px solid #38bdf8;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      z-index: 9999;
-    }
-
-    #messages {
-      flex: 1;
-      overflow-y: auto;
-      margin-bottom: 10px;
-      font-size: 14px;
-    }
-
-    .input-area {
-      display: flex;
-    }
-
-    #userMessage {
-      flex: 1;
-      padding: 8px;
-      border-radius: 8px;
-      border: 1px solid #38bdf8;
-      background: #1e293b;
-      color: #e2e8f0;
-    }
-
-    #sendBtn {
-      padding: 8px 12px;
-      margin-left: 5px;
-      border-radius: 8px;
-      border: none;
-      background: #38bdf8;
-      color: #0f172a;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    #sendBtn:hover {
-      background: #0ea5e9;
-    }
-
-    .user-msg {
-      text-align: right;
-      margin-bottom: 8px;
-    }
-
-    .user-msg span {
-      background: #38bdf8;
-      color: #0f172a;
-      padding: 6px 10px;
-      border-radius: 10px;
-      display: inline-block;
-    }
-
-    .bot-msg {
-      text-align: left;
-      margin-bottom: 8px;
-    }
-
-    .bot-msg span {
-      background: #1e293b;
-      border: 1px solid #38bdf8;
-      padding: 6px 10px;
-      border-radius: 10px;
-      display: inline-block;
-    }
-
+    #chatbox { position: fixed; bottom: 20px; right: 20px; width: 320px; height: 420px; border-radius: 16px; padding: 15px; background: #0f172a; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border: 1px solid #38bdf8; display: flex; flex-direction: column; justify-content: space-between; z-index: 9999; }
+    #messages { flex: 1; overflow-y: auto; margin-bottom: 10px; font-size: 14px; }
+    .input-area { display: flex; }
+    #userMessage { flex: 1; padding: 8px; border-radius: 8px; border: 1px solid #38bdf8; background: #1e293b; color: #e2e8f0; }
+    #sendBtn { padding: 8px 12px; margin-left: 5px; border-radius: 8px; border: none; background: #38bdf8; color: #0f172a; font-weight: bold; cursor: pointer; }
+    #sendBtn:hover { background: #0ea5e9; }
+    .user-msg { text-align: right; margin-bottom: 8px; }
+    .user-msg span { background: #38bdf8; color: #0f172a; padding: 6px 10px; border-radius: 10px; display: inline-block; }
+    .bot-msg { text-align: left; margin-bottom: 8px; }
+    .bot-msg span { background: #1e293b; border: 1px solid #38bdf8; padding: 6px 10px; border-radius: 10px; display: inline-block; }
   </style>
 </head>
 
 <body>
-
   <header>
     <h1>Joffrey Yap</h1>
     <p>Automation Consultant | Workflow Engineer | Docker & n8n Specialist</p>
-
     <a href="#contact" class="button">Contact Me</a>
-    <a href="mailto:yapjoffrey@gmail.com" class="button button-green">
-      Hire Me for Automation Projects
-    </a>
+    <a href="mailto:yapjoffrey@gmail.com" class="button button-green">Hire Me for Automation Projects</a>
   </header>
 
   <section>
-
     <div class="card">
       <h2>About Me</h2>
-      <p>
-        I help businesses automate workflows and optimize IT systems using Docker,
-        n8n, Windows scripting, and secure server deployment.
-        I build clean, scalable, production-ready solutions.
-      </p>
+      <p>I help businesses automate workflows and optimize IT systems using Docker, n8n, Windows scripting, and secure server deployment. I build clean, scalable, production-ready solutions.</p>
     </div>
 
     <div class="card">
@@ -236,48 +77,21 @@
 
     <div class="card" id="contact">
       <h2>Contact</h2>
-
-      <p>
-        <i class="fa fa-envelope"></i>
-        <a class="icon-link" href="mailto:yapjoffrey@gmail.com" target="_blank">
-          yapjoffrey@gmail.com
-        </a>
-      </p>
-
-      <p>
-        <i class="fa fa-linkedin"></i>
-        <a class="icon-link" href="https://www.linkedin.com/in/joffrey-yap-0a78a62b1/" target="_blank">
-          linkedin.com/in/joffrey-yap-0a78a62b1/
-        </a>
-      </p>
-
-      <p>
-        <i class="fa fa-facebook"></i>
-        <a class="icon-link" href="https://www.facebook.com/joffrey.yap" target="_blank">
-          facebook.com/joffrey.yap
-        </a>
-      </p>
-
+      <p><i class="fa fa-envelope"></i><a class="icon-link" href="mailto:yapjoffrey@gmail.com" target="_blank">yapjoffrey@gmail.com</a></p>
+      <p><i class="fa fa-linkedin"></i><a class="icon-link" href="https://www.linkedin.com/in/joffrey-yap-0a78a62b1/" target="_blank">linkedin.com/in/joffrey-yap-0a78a62b1/</a></p>
+      <p><i class="fa fa-facebook"></i><a class="icon-link" href="https://www.facebook.com/joffrey.yap" target="_blank">facebook.com/joffrey.yap</a></p>
     </div>
-
   </section>
 
   <footer>© 2026 Joffrey Yap | Built with GitHub Pages</footer>
 
   <!-- CHATBOX -->
   <div id="chatbox">
-
     <div id="messages"></div>
-
     <div class="input-area">
-      <input id="userMessage"
-        type="text"
-        placeholder="Ask me about automation..."
-        onkeypress="if(event.key==='Enter'){sendMessage()}">
-
+      <input id="userMessage" type="text" placeholder="Ask me about automation..." onkeypress="if(event.key==='Enter'){sendMessage()}">
       <button id="sendBtn" onclick="sendMessage()">Send</button>
     </div>
-
   </div>
 
   <script>
@@ -289,19 +103,12 @@
       const messagesDiv = document.getElementById("messages");
 
       // User message
-      messagesDiv.innerHTML += `
-        <div class="user-msg">
-          <span>${message}</span>
-        </div>`;
-
+      messagesDiv.innerHTML += `<div class="user-msg"><span>${message}</span></div>`;
       input.value = "";
       messagesDiv.scrollTop = messagesDiv.scrollHeight;
 
       // Typing indicator
-      messagesDiv.innerHTML += `
-        <div class="bot-msg" id="typing">
-          <span>Typing...</span>
-        </div>`;
+      messagesDiv.innerHTML += `<div class="bot-msg" id="typing"><span>Typing...</span></div>`;
       messagesDiv.scrollTop = messagesDiv.scrollHeight;
 
       try {
@@ -315,21 +122,15 @@
 
         document.getElementById("typing").remove();
 
-        messagesDiv.innerHTML += `
-          <div class="bot-msg">
-            <span>${data.reply}</span>
-          </div>`;
+        // ✅ Safe fallback for undefined
+        const botReply = data.reply || data?.[0]?.reply || "No response from bot";
 
+        messagesDiv.innerHTML += `<div class="bot-msg"><span>${botReply}</span></div>`;
         messagesDiv.scrollTop = messagesDiv.scrollHeight;
 
       } catch (err) {
         document.getElementById("typing").remove();
-
-        messagesDiv.innerHTML += `
-          <div class="bot-msg">
-            <span style="color:red;">Error: Could not reach bot.</span>
-          </div>`;
-
+        messagesDiv.innerHTML += `<div class="bot-msg"><span style="color:red;">Error: Could not reach bot.</span></div>`;
         messagesDiv.scrollTop = messagesDiv.scrollHeight;
         console.error(err);
       }
